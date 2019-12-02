@@ -18,7 +18,6 @@ create database magento default character set utf8mb4 collate utf8mb4_unicode_ci
 ``` bin/clinotty mysql -h db -u root -pmagento magento < dbdump.sql ```
 
 
-
 ## 创建管理员账号
 bin/magento admin:user:create --admin-user=admin --admin-password=password123 --admin-email=jacky850618@gmail.com --admin-firstname=yang  --admin-lastname=lei
 
@@ -39,4 +38,14 @@ docker run -v magento-xxhub_sockdata:/volume --rm loomchild/volume-backup backup
 cat magento-xxhub_appdata.tar.bz2 | docker run -i -v magento-xxhub_appdata:/volume --rm loomchild/volume-backup restore -
 cat magento-xxhub_dbdata.tar.bz2 | docker run -i -v magento-xxhub_dbdata:/volume --rm loomchild/volume-backup restore -
 cat magento-xxhub_sockdata.tar.bz2 | docker run -i -v magento-xxhub_sockdata:/volume --rm loomchild/volume-backup restore -
+
+## 常见设置
+### 配置主页
+
+#### 选择一个主页
+进入 Store > Configuration > General > Web > Default Pages tab, 选择在CMS Home Page中的页面，保存配置
+想要编辑主页的内容，进入Content > Elements > Page，打开活跃的主页面，在Content tag中可以找到内容:
+
+
+
 
