@@ -30,6 +30,17 @@ services:
     networks:
       - magento
 
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 6080:80
+    environment:
+      - PMA_HOST=db
+    links:
+      - db
+    networks:
+      - magento
+
   db:
     image: percona:5.7
     ports:
