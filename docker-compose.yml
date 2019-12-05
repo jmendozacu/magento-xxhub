@@ -1,5 +1,5 @@
 # Mark Shust's Docker Configuration for Magento (https://github.com/markshust/docker-magento)
-# Version 25.0.0
+# Version 25.0.0bin
 
 version: "3"
 
@@ -12,17 +12,23 @@ services:
     links:
       - db
       - phpfpm
+      - elasticsearch
     volumes: &appvolumes
       - ~/.composer:/var/www/.composer:delegated
       - ./config/certs:/etc/nginx/certs:delegated
       - appdata:/var/www/html
       - sockdata:/sock
+    networks:
+      - magento
 
   phpfpm:
     image: markoshust/magento-php:7.3-fpm-1
     links:
       - db
+      - elasticsearch
     volumes: *appvolumes
+    networks:
+      - magento
 
   db:
     image: percona:5.7
@@ -31,15 +37,32 @@ services:
     env_file: config/db.env
     volumes:
       - dbdata:/var/lib/mysql
+    networks:
+      - magento
 
   redis:
     image: redis:5.0
+    networks:
+      - magento
 
   elasticsearch:
     image: markoshust/magento-elasticsearch:6.5.4-0
     ports:
       - "9200:9200"
       - "9300:9300"
+    networks:
+      - magento
+
+  kibana:
+    image: kibana:6.8.4
+    volumes:
+      - ./config/kibana.yml:/usr/share/kibana/config/kibana.yml
+    ports:
+      - "5601:5601"
+    depends_on:
+      - elasticsearch
+    networks:
+      - magento
 
   # Disabling cron by default as it uses higher CPU, enable if needed
 #  cron:
@@ -50,6 +73,11 @@ services:
 #    links:
 #      - db
 #    volumes: *appvolumes
+
+networks:
+  magento:
+    driver: bridge
+
 
 volumes:
   appdata:

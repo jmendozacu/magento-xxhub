@@ -1,1 +1,6 @@
 *.tar.bz2
+.idea
+.vscode
+src/vendor
+
+.DS_Store

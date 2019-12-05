@@ -23,11 +23,11 @@ services:
     #extra_hosts:
     #  - "host.docker.internal:IP"
 
-  mailhog:
-    image: mailhog/mailhog
-    ports:
-      - "1025"
-      - "8025:8025"
+#  mailhog:
+#    image: mailhog/mailhog
+#    ports:
+#      - "1025"
+#      - "8025:8025"
 
   # Disabling cron by default as it uses higher CPU, enable if needed
 #  cron:
