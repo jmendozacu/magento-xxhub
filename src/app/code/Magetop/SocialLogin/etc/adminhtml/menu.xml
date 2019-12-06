@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @Author      Magetop Developers
+ * @package     Magetop_SocialLogin
+ * @copyright   Copyright (c) 2018 MAGETOP (https://www.magetop.com)
+ * @terms       https://www.magetop.com/terms
+ * @license     https://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ **/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+
+        <add id="Magetop_SocialLogin::main_menu" title="Social Login" module="Magetop_SocialLogin" sortOrder="20" parent="Magetop_Core::menu_root" resource="Magetop_Core::all" />
+
+        <add id="Magetop_SocialLogin::configuration" title="Configurations" module="Magetop_SocialLogin" parent="Magetop_SocialLogin::main_menu" sortOrder="10" action="adminhtml/system_config/edit/section/sociallogin" resource="Magetop_SocialLogin::configuration"/>
+
+    </menu>
+</config>

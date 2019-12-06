@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+    <menu>
+        <add id="Magetop_Core::menu_root" title="Magetop" module="Magetop_Core" sortOrder="60" resource="Magetop_Core::all"/>
+    </menu>
+</config>

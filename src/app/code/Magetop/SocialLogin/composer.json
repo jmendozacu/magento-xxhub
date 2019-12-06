@@ -1,0 +1,46 @@
+{
+  "name": "magetop/magento-2-social-login",
+  "description": "Magento 2 Social Login extension is designed for quick login to your Magento 2 store without procesing complex register steps",
+  "require": {
+    "magetop/module-core": "^1.3.13",
+    "hybridauth/hybridauth": "^2.11.0"
+  },
+  "type": "magento2-module",
+  "version": "2.7.1",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Magetop",
+      "email": "support@magetop.com",
+      "homepage": "https://www.magetop.com",
+      "role": "Technical Support"
+    }
+  ],
+  "keywords": [
+    "magento 2",
+    "social login",
+    "magento 2 social login",
+    "facebook login",
+    "Google Login",
+    "Instagram Login",
+    "LinkedIn Login",
+    "Microsoft Live Login",
+    "Twitter Login",
+    "Yahoo Login",
+    "FourSquare Login",
+    "Amazon Login",
+    "Login",
+    "magetop",
+    "google",
+    "facebook",
+    "twitter"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Magetop\\SocialLogin\\": ""
+    }
+  }
+}
