@@ -23,9 +23,8 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="../../../Backend/etc/menu.xsd">
     <menu>
-        <add id="Magetop_Brand::main_menu" title="Shop By Brand" module="Magetop_Brand" sortOrder="20" resource="Magetop_Core::all" parent="Magetop_Core::menu_root"/>
 
-        <add id="Magetop_Brand::brand" title="Brand" module="Magetop_Brand" sortOrder="40" resource="Magetop_Brand::brand" parent="Magetop_Brand::main_menu"/>
+        <add id="Magetop_Brand::brand" title="Brand" module="Magetop_Brand" sortOrder="40" resource="Magetop_Core::all" parent="Magetop_Core::menu_root"/>
 
         <add id="Magetop_Brand::brand_new" title="Add New Brand" module="Magetop_Brand" sortOrder="10" parent="Magetop_Brand::brand" action="magetopbrand/brand/new" resource="Magetop_Brand::brand"/>
 
